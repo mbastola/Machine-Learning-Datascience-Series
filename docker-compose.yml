@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  ml-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ml_datascience_series
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    command: "start.sh jupyter lab --NotebookApp.token='' --NotebookApp.password=''"
+
+
